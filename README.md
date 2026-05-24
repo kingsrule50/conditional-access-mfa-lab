@@ -7,6 +7,21 @@
 
 ---
 
+## ⚠️ The Problem This Lab Addresses
+
+In many organizations, user accounts are protected by passwords alone. This creates a serious security gap — if a password is stolen, phished, or leaked, an attacker gains unrestricted access to all cloud resources with no additional barrier to stop them.
+
+Microsoft reports that **over 99.9% of compromised accounts had no MFA enabled**. Without a Conditional Access policy enforcing MFA, organizations remain highly vulnerable to:
+
+- **Credential stuffing attacks** — attackers using leaked username/password combinations from data breaches
+- **Phishing attacks** — users tricked into entering credentials on fake login pages
+- **Password spray attacks** — automated tools testing common passwords across many accounts
+- **Insider threats** — stolen or shared credentials used from unrecognized devices or locations
+
+Simply enabling MFA at the user level is not enough — without a **policy that enforces it**, users can bypass or delay enrollment indefinitely. This lab solves that problem by implementing a **Conditional Access policy** that blocks access to all cloud applications unless the user has completed MFA — making it mandatory, not optional.
+
+---
+
 ## 📋 Overview
 
 In this lab, I configured a **Conditional Access policy** in Microsoft Entra ID to enforce **Multi-Factor Authentication (MFA)** for a specific group of test users. The lab walks through three phases:
@@ -19,10 +34,14 @@ In this lab, I configured a **Conditional Access policy** in Microsoft Entra ID 
 
 ## 🗂️ Table of Contents
 
+- [The Problem This Lab Addresses](#️-the-problem-this-lab-addresses)
 - [Phase 1 — Group Creation](#phase-1--group-creation-in-microsoft-365-admin-center)
 - [Phase 2 — Policy Configuration](#phase-2--conditional-access-policy-configuration)
 - [Phase 3 — MFA Registration & Verification](#phase-3--end-user-mfa-registration--verification)
 - [Summary](#summary)
+- [Skills Demonstrated](#-skills-demonstrated)
+- [Career Relevance](#-career-relevance)
+- [Related Labs](#-related-labs-in-this-repository)
 
 ---
 
@@ -284,8 +303,54 @@ In this lab, I successfully completed all three phases of Conditional Access MFA
 
 ---
 
+## 🧠 Skills Demonstrated
+
+| Skill | Details |
+|---|---|
+| **Identity & Access Management (IAM)** | Created and managed Microsoft 365 security groups with assigned owners and members |
+| **Conditional Access Policy Design** | Built a policy from scratch targeting specific user groups across all cloud applications |
+| **MFA Enforcement** | Configured Grant controls to require multifactor authentication as an access condition |
+| **Security Defaults Management** | Understood the relationship between Security Defaults and Conditional Access, and correctly disabled defaults to enable custom policy control |
+| **Microsoft Entra ID Administration** | Navigated and configured ID Protection, Conditional Access, and policy management in the Entra Admin Center |
+| **Microsoft 365 Admin Center** | Provisioned groups using the M365 group wizard including Basics, Owners, Members, and Settings configuration |
+| **End-User MFA Registration** | Completed the full Microsoft Authenticator setup flow including QR code scanning and number-match push notification verification |
+| **Zero Trust Security Principles** | Applied least-privilege and verify-explicitly principles by scoping the policy to a specific group rather than all users |
+| **Policy Testing & Verification** | Validated policy enforcement by signing in as a test user and confirming the MFA prompt was triggered as expected |
+
+---
+
+## 💼 Career Relevance
+
+This lab directly maps to real-world responsibilities across multiple cybersecurity and cloud administration roles:
+
+| Role | Relevance |
+|---|---|
+| **Cloud Security Engineer** | Designing and enforcing identity-based access controls is a core daily responsibility in cloud environments |
+| **Microsoft 365 Administrator** | Managing Conditional Access policies, groups, and MFA enforcement is a standard M365 admin task |
+| **Identity & Access Management (IAM) Analyst** | Understanding Entra ID policy structures, Security Defaults, and MFA workflows is fundamental to IAM work |
+| **Security Operations Center (SOC) Analyst** | Recognizing how Conditional Access policies generate sign-in logs helps analysts investigate authentication anomalies and policy bypass attempts |
+| **IT Security Auditor / Compliance Analyst** | Conditional Access policies are a key control in frameworks like **NIST 800-53**, **ISO 27001**, **CIS Controls**, and **Microsoft Security Benchmark** |
+| **Zero Trust Architect** | This lab implements a foundational Zero Trust control — enforcing identity verification before granting access to any resource |
+
+> 🎯 MFA enforcement via Conditional Access is one of the most impactful and widely required security controls in enterprise environments. Demonstrating hands-on experience with this is highly valued in cloud security and M365 administration roles.
+
+---
+
+## 🔗 Related Labs in This Repository
+
+| Lab | Description | Link |
+|---|---|---|
+| **Azure SOC Homelab** | Practical cloud security labs built on Azure — deploying Active Directory, Splunk SIEM, and real detection rules from the ground up | [View Lab](https://github.com/kingsrule50/azure-soc-homelab) |
+| **Windows Autopilot & Intune** | End-to-end Windows Autopilot deployment using Microsoft Intune and Entra ID — covers device enrollment, compliance policies, and zero-touch provisioning | [View Lab](https://github.com/kingsrule50/windows-autopilot-intune) |
+| **Champulze M365 Project** | End-to-end Microsoft 365 tenant deployment including domain integration, Teams Premium, Exchange, SharePoint, user provisioning, and UAT validation | [View Lab](https://github.com/kingsrule50/Champulze_M365_Project_) |
+| **Soulinspire M365 Teams Rollout** | Microsoft Teams rollout and governance project using Microsoft 365 cloud tools — covers policy configuration, channel governance, and user adoption | [View Lab](https://github.com/kingsrule50/soulinspire-m365-teams-rollout) |
+| **Wireshark Threat Detection Lab** | Network threat detection lab simulating SYN scans and SMB enumeration in a segmented environment using Wireshark | [View Lab](https://github.com/kingsrule50/wireshark-threat-detection-lab) |
+
+---
+
 ## 🛠️ Technologies Used
 
 ![Microsoft Entra ID](https://img.shields.io/badge/Microsoft%20Entra%20ID-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)
 ![Microsoft 365](https://img.shields.io/badge/Microsoft%20365-D83B01?style=for-the-badge&logo=microsoft-office&logoColor=white)
 ![Azure](https://img.shields.io/badge/Azure-0089D6?style=for-the-badge&logo=microsoft-azure&logoColor=white)
+![Microsoft Authenticator](https://img.shields.io/badge/Microsoft%20Authenticator-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)
