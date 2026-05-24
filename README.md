@@ -1,8 +1,8 @@
 # 🔐 Conditional Access Policy — Requiring MFA Authentication
 
 **Platform:** Microsoft Entra ID (Azure AD)  
-**Organization:** Cupetence Technologies DEV  
-**Author:** Kingsley Asuzu  
+**Organization:** @tenantname  
+**Author:** Kingsley  
 **Date:** May 23, 2026  
 
 ---
@@ -51,7 +51,7 @@ I then clicked **Next** to proceed.
 
 ### Step 3 — Searched for and Selected Group Owner
 
-On the **Owners** step, I clicked **+ Assign owners** and searched for `KINGS`. From the results I selected **Kingsley Asuzu** (`kingsley@cupetencedev.com`) as the group owner and clicked **Add (1)**.
+On the **Owners** step, I clicked **+ Assign owners** and searched for `KINGS`. From the results I selected **Kingsley** (`kingsley@tenantname`) as the group owner and clicked **Add (1)**.
 
 ![Step 3 - Assign Owners Search](screenshots/2026-05-23_19-20.png)
 
@@ -59,7 +59,7 @@ On the **Owners** step, I clicked **+ Assign owners** and searched for `KINGS`. 
 
 ### Step 4 — Confirmed Group Owner
 
-The Assign owners page confirmed **Kingsley Asuzu** was added as the group owner. I clicked **Next** to proceed to the Members step.
+The Assign owners page confirmed **Kingsley** was added as the group owner. I clicked **Next** to proceed to the Members step.
 
 ![Step 4 - Owner Confirmed](screenshots/2026-05-23_19-20_1.png)
 
@@ -67,7 +67,7 @@ The Assign owners page confirmed **Kingsley Asuzu** was added as the group owner
 
 ### Step 5 — Added Group Member
 
-On the **Add members** step, I searched for `KATE ALL` and selected **kate ALL** (`Kateall@cupetencedev.com`) as the group's test member. This is the account I would later use to verify the policy enforcement. I clicked **Add (1)** to confirm.
+On the **Add members** step, I searched for `KATE ALL` and selected **kate ALL** (`Kateall@tenantname`) as the group's test member. This is the account I would later use to verify the policy enforcement. I clicked **Add (1)** to confirm.
 
 ![Step 5 - Add Members](screenshots/2026-05-23_19-21.png)
 
@@ -79,7 +79,7 @@ On the **Settings** step, I configured:
 
 | Setting | Value |
 |---|---|
-| Group email address | `CAT_Test_Uers@cupetencedev.com` |
+| Group email address | `CAT_Test_Uers@tenantname` |
 | Sensitivity | None |
 | Privacy | Private |
 | Add Microsoft Teams | Yes |
@@ -98,9 +98,9 @@ On the **Review and finish** page, I confirmed all group details before clicking
 |---|---|
 | Group type | Microsoft 365 |
 | Name | CA-Test-Users |
-| Owner | Kingsley Asuzu |
+| Owner | Kingsley |
 | Member | kate ALL |
-| Email | CAT_Test_Uers@cupetencedev.com |
+| Email | CAT_Test_Uers@tenantname |
 | Privacy | Private |
 
 ![Step 7 - Review and Finish](screenshots/2026-05-23_19-23.png)
@@ -199,7 +199,7 @@ The Conditional Access Policies dashboard updated to show **3 user-created polic
 
 ### Step 16 — Signed In as the Test User
 
-To verify the policy was enforcing MFA, I opened a browser and signed in to **login.microsoftonline.com** as the test user **`Kateall@cupetencedev.com`** and clicked **Next**.
+To verify the policy was enforcing MFA, I opened a browser and signed in to **login.microsoftonline.com** as the test user **`Kateall@tenantname`** and clicked **Next**.
 
 ![Step 16 - Sign In](screenshots/2026-05-23_16-11.png)
 
@@ -233,7 +233,7 @@ I followed the instructions to open the Microsoft Authenticator app on my mobile
 
 ### Step 20 — Scanned the QR Code
 
-A QR code was displayed on the screen. I used the Microsoft Authenticator app on the mobile device to scan it, which linked the app to the **Kateall@cupetencedev.com** account. I clicked **Next** after scanning.
+A QR code was displayed on the screen. I used the Microsoft Authenticator app on the mobile device to scan it, which linked the app to the **Kateall@tenantname** account. I clicked **Next** after scanning.
 
 ![Step 20 - Scan QR Code](screenshots/2026-05-23_16-13_1.png)
 
@@ -280,7 +280,7 @@ In this lab, I successfully completed all three phases of Conditional Access MFA
 | ✅ 5 | Deployed the policy with state set to **On** — confirmed active in the Entra dashboard |
 | ✅ 6 | Verified the policy end-to-end: signed in as test user, completed MFA registration via Microsoft Authenticator, passed number-match push notification, and successfully authenticated |
 
-> 🔒 The Conditional Access policy is now active and enforcing MFA for all users in the **CA-Test-Users** group across all cloud applications in the Cupetence Technologies DEV tenant.
+> 🔒 The Conditional Access policy is now active and enforcing MFA for all users in the **CA-Test-Users** group across all cloud applications in the @tenantname tenant.
 
 ---
 
